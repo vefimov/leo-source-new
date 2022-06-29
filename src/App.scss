@@ -1,35 +1,7 @@
-.Container {
-  display: flex;
-  flex-direction: row;
+.react_tinylink_card {
   border: 1px solid #d7cece;
   border-radius: 0;
-  padding: 10px;
   margin: 15px auto;
-  font-size: 13px;
-
-  h3 {
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .LowerContainer {
-    padding: 0;
-  }
-
-  .Secondary {
-    display: none;
-  }
-
-  .Image {
-    flex: 0 0 200px;
-    border-radius: 0;
-    max-height: 100px;
-    margin-right: 20px;
-  }
-
-  .Description {
-    display: block !important;
-  }
 }
 
 form {

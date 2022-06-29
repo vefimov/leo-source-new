@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { LinkPreview } from '@dhaiwat10/react-link-preview';
 import { collection, addDoc, serverTimestamp, getDocs, doc } from 'firebase/firestore';
+// @ts-ignore
+import { ReactTinyLink } from 'react-tiny-link';
 
 import { db } from './firebase';
 import './App.scss';
@@ -10,8 +11,6 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    console.log('-------');
-
     const loadPosts = async () => {
       const posts: any = [];
       const querySnapshot = await getDocs(collection(db, 'posts'));
@@ -63,7 +62,13 @@ function App() {
         </form>
 
         {posts.map((post: any) => (
-          <LinkPreview key={post.url} url="https://2ality.com/2022/06/ecmascript-2022.html" width="100%" />
+          <ReactTinyLink
+            cardSize="small"
+            showGraphic={true}
+            maxLine={2}
+            minLine={1}
+            url={post.url}
+          />
         ))}
       </div>
     </div>
